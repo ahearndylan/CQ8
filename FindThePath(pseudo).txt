@@ -1,0 +1,34 @@
+Pseudo Code: 
+
+Initialize
+- Create a priority queue (pq) to keep track of which cell to visit next
+- Create a 2D array (dist) to store the lowest cost found for each cell, initialized to "infinity" except for the starting cell
+
+Start with each pair of start and end points 
+- Clear the pq and set the starting cell's cost
+- Add the starting cell to pq
+
+While there are cells left in pq:
+- Take the cell with the lowest estimated cost
+- If this cell is the destination, save the cost and stop
+
+Explore possible moves (up, down, left, right):
+- For each move, calculate new coordinates (nx, ny)
+- Check if (nx, ny) is valid 
+- Calculate the new cost to reach (nx, ny)
+
+If this new cost is lower than any previously found cost for (nx, ny):
+- Update the cost for (nx, ny)
+- Add (nx, ny) to pq
+
+Record the results for this query
+
+
+The algorithm helps finds the shortest path in a grid where each step could have a different 'cost'. It uses three different approaches: 
+- Heuristic: The manhattan distance is a quick guess to estimate how close each step is to the fina goal. 
+- Priority Queue: This puts priority over certain movements based on the actual cost to reach that step and the estimated cost to reach the goal. 
+- Efficient Search: Once the goal has been reached, the algorithm will stop searching. 
+This algorithm uses many different real costs and smart guesses to quickly find the best route. 
+
+
+Time Analysis: The time complexity of this pathfinding algorithm is O(nlogn). N is the numb er nodes in the grid. In the best case, the number of nodes processed is minimized, resulting in the complexity of O(nlogn). 
